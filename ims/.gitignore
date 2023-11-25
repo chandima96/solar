@@ -3,7 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
-.env
+# .env      2023/26/11 Asanka Tharindu Comment this
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml
