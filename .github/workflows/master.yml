@@ -17,4 +17,4 @@ jobs:
         server: 18.142.37.231
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: /18.142.37.231/var/www/html/
+        server-dir: /18.142.37.231/var/www/html/solar/
