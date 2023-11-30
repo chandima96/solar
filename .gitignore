@@ -1,2 +1,3 @@
 /ims/public
 !/ims/public/.gitkeep
+/ims/.env
