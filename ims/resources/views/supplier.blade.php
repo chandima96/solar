@@ -24,7 +24,7 @@
                 <table class="min-w-full divide-y divide-gray-300">
                   <thead>
                     <tr>
-                      <th scope="col" class="relative group py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Id
+                      <th scope="col" class="relative group px-3 py-4 text-left text-sm font-semibold text-gray-900">Id
                         <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute bg-gray-100 border-2 text-gray-800 text-xs font-normal py-2 px-4 rounded-md mt-2 transition duration-300">
                           Description goes here.
                         </div>
@@ -55,26 +55,47 @@
                           Description goes here.
                         </div>
                       </th>
-                      
                       <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
                         <span class="sr-only">Edit</span>
                       </th>
                     </tr>
                   </thead>
+
                   <tbody class="divide-y divide-gray-200 bg-white">
                     <tr class="hover:bg-slate-100 hover:duration-300">
-                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">uid123</td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">uid123</td>
                       <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">Lindsay Walton</td>
                       <td class="px-3 py-4 text-sm text-gray-500">0711659004</td>
                       <td class="px-3 py-4 text-sm text-gray-500">lindsay.walton@example.com</td>
                       <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Metadelan</td>
                       <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td>
-                      <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                        <div class="flex flex-col">
-                          <button class="text-green-600 hover:text-green-700" onclick="openEditModal()">Edit</span></button>
-                          <button class="text-red-400 hover:text-red-600 my-1">Delete</span></button>
+                      <td class="whitespace-nowrap px-3 py-4 text-right text-sm font-medium sm:pr-0">
+                        <div class="flex">
+                          <button class="text-green-600 hover:text-green-700 mx-2" onclick="openEditModal()">Edit</span></button>
+                          <button class="text-red-400 hover:text-red-600"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                            </svg>
+                           </button>
                         </div>
-                        
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-slate-100 hover:duration-300">
+                      <td class="whitespace-nowrap px-3 py-4 text-sm font-medium text-gray-900">uid123</td>
+                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">Lindsay Walton</td>
+                      <td class="px-3 py-4 text-sm text-gray-500">0711659004</td>
+                      <td class="px-3 py-4 text-sm text-gray-500">lindsay.walton@example.com</td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Metadelan</td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-right text-sm font-medium sm:pr-0">
+                        <div class="flex">
+                          <button class="text-green-600 hover:text-green-700 mx-2" onclick="openEditModal()">Edit</span></button>
+                          <button class="text-red-400 hover:text-red-600"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                            </svg>
+                           </button>
+                        </div>
                       </td>
                     </tr>
             
