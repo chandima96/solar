@@ -1,6 +1,6 @@
 
 <!-- home.blade.php -->
-@extends('layout')
+@extends('navbar.layout')
 
 @section('content')
     <!-- your home page content goes here -->
