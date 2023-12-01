@@ -2,15 +2,5 @@
 !/ims/public/.gitkeep
 /ims/.env
 
-	.github/workflows/master.yml
-	.gitignore
-	ims/node_modules/.vite/deps_temp_7a61ea4e/alpinejs.js
-	ims/node_modules/.vite/deps_temp_7a61ea4e/alpinejs.js.map
-	ims/node_modules/.vite/deps_temp_7a61ea4e/axios.js
-	ims/node_modules/.vite/deps_temp_7a61ea4e/axios.js.map
-	ims/node_modules/.vite/deps_temp_7a61ea4e/chunk-6TJCVOLN.js
-	ims/node_modules/.vite/deps_temp_7a61ea4e/chunk-6TJCVOLN.js.map
-	ims/node_modules/.vite/deps_temp_7a61ea4e/lodash.js
-	ims/node_modules/.vite/deps_temp_7a61ea4e/lodash.js.map
-	ims/node_modules/.vite/deps_temp_7a61ea4e/package.json
+.github/workflows/master.yml
 
