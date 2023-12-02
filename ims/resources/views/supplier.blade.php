@@ -214,6 +214,37 @@
             <!-- model add -->
 
         </div>
+
+        <!-- success message -->
+        <div id="successMessage" class="fixed top-0 right-0 mt-12 mr-10 bg-white text-sm text-green-600 p-1 rounded shadow-md transform translate-x-full opacity-0 transition-transform duration-500 ease-in-out">
+        <div class="flex gap-2 items-center">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+              <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"/>
+              <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+            </svg>
+          </div>
+          <div>Action was successful.</div>
+        </div>
+      </div>
+      
+      <script>
+        // Show and hide success message
+        document.addEventListener('DOMContentLoaded', function () {
+          const successMessage = document.getElementById('successMessage');
+      
+          // Show message
+          successMessage.style.transform = 'translateX(0)';
+          successMessage.style.opacity = '1';
+      
+          // Hide message after 2 seconds
+          setTimeout(() => {
+            successMessage.style.transform = 'translateX(100%)';
+            successMessage.style.opacity = '0';
+          }, 2000);
+        });
+      </script>
+
         <script>
             // Open Update Modal
             function openEditModal() {
