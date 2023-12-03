@@ -5,13 +5,6 @@
 @section('content')
     <!-- your home page content goes here -->
 
-    <!-- display the success message  -->
-    @if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-    @endif
-
     <div>
             <div class="px-4 sm:px-6 lg:px-8">
               <div class="sm:flex sm:items-center">
@@ -224,7 +217,13 @@
               <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
             </svg>
           </div>
-          <div>Action was successful.</div>
+          <div> <!-- display the success message  -->
+            @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+            @endif
+          </div>
         </div>
       </div>
       
