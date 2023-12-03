@@ -71,6 +71,11 @@
                           Description Company here.
                         </div>
                       </th>
+                      <th scope="col" class="relative group px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Brand
+                        <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute bg-gray-100 border-2 text-gray-800 text-xs font-normal py-2 px-4 rounded-md mt-2 transition duration-300">
+                          Description Company here.
+                        </div>
+                      </th>
                       <th scope="col" class="relative px-3 py-3.5 text-left text-sm font-semibold text-gray-900 group">
                         In stock
                         <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute bg-gray-100 border-2 text-gray-800 text-xs font-normal py-2 px-4 rounded-md mt-2 transition duration-300">
@@ -90,6 +95,7 @@
                       <td class="px-3 py-4 text-sm text-gray-500">07</td>
                       <td class="px-3 py-4 text-sm text-gray-500">lindsay</td>
                       <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Metadelan</td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td>
                       <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td>
                       <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td>
                       <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td>
