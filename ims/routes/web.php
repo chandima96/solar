@@ -29,6 +29,10 @@ Route::get('/brand', function () {
     return view('brand');
 });
 
+Route::get('/inventory-single', function () {
+    return view('inventory-single');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
