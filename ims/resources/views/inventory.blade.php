@@ -131,57 +131,60 @@
                 <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
                   <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <p class="mb-8">Add Product <span class="text-green-600">Id0000</span></p>
+                    <form action="{{ route('inventorys.store') }}" method="post">
+                    @csrf
                     <div class="grid grid-cols-2 gap-3">
                       <div class="relative">
                         <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Name</label>
                         <input type="text" name="name" id="name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
                       </div>
                       <div class="relative">
-                        <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Des</label>
-                        <input type="text" name="name" id="name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
+                        <label for="p_description" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Description</label>
+                        <input type="text" name="p_description" id="p_description" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
                       </div>
                     </div>
+                    </form>
                     <p class="mb-8">Add batch</p>
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                       <div class="relative">
-                        <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Quantity</label>
-                        <input type="text" name="name" id="name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
+                        <label for="quantity" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Quantity</label>
+                        <input type="text" name="quantity" id="quantity" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
                       </div>
                       <div class="relative">
-                        <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Unit Price</label>
-                        <input type="text" name="name" id="name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
+                        <label for="unit_price" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Unit Price</label>
+                        <input type="text" name="unit_price" id="unit_price" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
                       </div>
                       <div class="relative">
-                        <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Type</label>
-                        <select id="location" name="location" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1">
+                        <label for="type" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Type</label>
+                        <select id="type" name="type" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1">
                           <option>United States</option>
                           <option selected>Canada</option>
                           <option>Mexico</option>
                         </select>
                       </div>
                       <div class="relative">
-                        <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Supplier</label>
-                        <select id="location" name="location" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1">
+                        <label for="supplier_id" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Supplier</label>
+                        <select id="supplier_id" name="supplier_id" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1">
                           <option>United States</option>
                           <option selected>Canada</option>
                           <option>Mexico</option>
                         </select>
                       </div>
                       <div class="relative">
-                        <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Brand</label>
-                        <select id="location" name="location" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1">
+                        <label for="brand" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Brand</label>
+                        <select id="brand" name="brand" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1">
                           <option>United States</option>
                           <option selected>Canada</option>
                           <option>Mexico</option>
                         </select>
                       </div>
                       <div class="relative">
-                        <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Damaged Quantity</label>
-                        <input type="text" name="name" id="name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
+                        <label for="damaged_quantity" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Damaged Quantity</label>
+                        <input type="text" name="damaged_quantity" id="damaged_quantity" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
                       </div>
                       <div class="relative">
-                        <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Description</label>
-                        <input type="text" name="name" id="name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
+                        <label for="b_description" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Description</label>
+                        <input type="text" name="b_description" id="b_description" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
                       </div>
                     </div>
                   </div>

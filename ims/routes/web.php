@@ -48,3 +48,4 @@ require __DIR__.'/auth.php';
 
 Route::get('/supplier', [SupplierController::class, 'index']);
 Route::resource('suppliers', SupplierController::class);
+Route::resource('inventorys', SupplierController::class);

@@ -19,9 +19,12 @@ return new class extends Migration
             $table->foreignId('batch_id')->constrained();
             $table->decimal('quantity');
             $table->decimal('available_quantity');
-            $table->date('expire_date');
-            $table->decimal('cost_price');
-            $table->decimal('selling_price');
+            $table->decimal('price');
+            $table->string('type');
+            $table->string('damaged_quantity');
+            $table->string('brand');
+            $table->string('supplier_id');
+            $table->string('invoice_id');
             $table->integer('status');
             $table->timestamps();
         });
