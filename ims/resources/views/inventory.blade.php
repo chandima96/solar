@@ -96,7 +96,7 @@
                       <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td>
                       <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                         <div class="flex items-center">
-                          <button class="text-green-600 hover:text-green-700 mx-2" onclick="openEditModal()">Edit</span></button>
+                          <button class="text-green-600 hover:text-green-700 mx-2" onclick="openEditModal('{{ route('products.edit', ['inventorie' => $inventories]) }}')">Edit</span></button>
                           <button class="text-red-400 hover:text-red-600 mr-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
                             <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
@@ -131,16 +131,16 @@
                 <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
                   <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <p class="mb-8">Add Product <span class="text-green-600">Id0000</span></p>
-                    <form action="{{ route('inventorys.store') }}" method="post">
+                    <form action="{{ route('products.store') }}" method="post">
                     @csrf
                     <div class="grid grid-cols-2 gap-3">
                       <div class="relative">
-                        <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Name</label>
+                        <label for="name  " class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Name</label>
                         <input type="text" name="name" id="name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
                       </div>
                       <div class="relative">
-                        <label for="p_description" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Description</label>
-                        <input type="text" name="p_description" id="p_description" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
+                        <label for="description" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Description</label>
+                        <input type="text" name="description" id="description" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
                       </div>
                       <div class="relative">
                         <label for="type" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Type</label>
@@ -151,12 +151,11 @@
                         </select>
                       </div>
                     </div>
-                    </form>
                   </div>
                   
                   
                   <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button onclick="" type="button" class="w-full inline-flex justify-center rounded-md border border-indigo-500 shadow-sm px-4 py-2 text-base font-medium text-indigo-500 hover:text-white hover:bg-indigo-700 hover:duration-500 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
+                    <button onclick="" type="submit" class="w-full inline-flex justify-center rounded-md border border-indigo-500 shadow-sm px-4 py-2 text-base font-medium text-indigo-500 hover:text-white hover:bg-indigo-700 hover:duration-500 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5 mr-2">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -168,7 +167,8 @@
                       </svg>
                       Cancel
                     </button>
-                  </div>
+                  </div> 
+                  </form>
                 </div>
               </div>
             </div>
@@ -184,6 +184,8 @@
                 <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full">
                   <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <p class="mb-8">Add Product <span class="text-green-600">Id0000</span></p>
+                    <form action="{{ route('products.store') }}" method="post">
+                    @csrf
                     <div class="grid grid-cols-2 gap-3">
                       <div class="relative">
                         <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Name</label>

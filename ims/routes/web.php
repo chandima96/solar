@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ProductController;
 
 
 
@@ -21,9 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/inventory', function () {
-    return view('inventory');
-});
+// Route::get('/inventory', function () {
+//     return view('inventory');
+// });
 
 Route::get('/brand', function () {
     return view('brand');
@@ -48,4 +49,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/supplier', [SupplierController::class, 'index']);
 Route::resource('suppliers', SupplierController::class);
-Route::resource('inventorys', SupplierController::class);
+Route::resource('products', ProductController::class);
+Route::resource('inventorys', InventoryController::class);
+Route::get('/inventory', [InventoryController::class, 'index']);
+

@@ -4,13 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\BatchHasProduct;
+use Illuminate\Support\Facades\DB;
 
 class InventoryController extends Controller
 {
     public function index()
     {
-        $inventories = Inventory::all();
-        return view('inventories.index', compact('inventories'));
+        // $inventories = Inventory::all();
+        // return view('inventories.index', compact('inventories'));
+        $inventories = DB::table('products')
+        ->join('batch_has_products', 'products.id', '=', 'batch_has_products.product_id')
+        ->select('products.*', 'batch_has_products.*')
+        ->get();
+
+    return view('inventories.index', compact('inventories'));
     }
 
     public function create()
