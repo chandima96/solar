@@ -43,6 +43,7 @@ jobs:
           chmod 600 private_key.pem
 
           # Create known_hosts file if it doesn't exist
+          mkdir -p /home/runner/.ssh
           touch /home/runner/.ssh/known_hosts
           
           # Clear old key from known_hosts
