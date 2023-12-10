@@ -27,10 +27,6 @@ jobs:
         run: npm run build
         working-directory: ims
 
-      # - name: 🛠 Run
-      #   run: npm run dev
-      #   working-directory: ims
-
       - name: 📂 rsync deployments
         uses: burnett01/rsync-deployments@5.1
         with:
@@ -40,3 +36,10 @@ jobs:
           remote_host: 18.142.37.231
           remote_user: ec2-user
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
+
+      - name: 📂 Set ownership on remote server
+        run: |
+          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@18.142.37.231 \
+            "sudo chown -R ec2-user:apache /var/www/html/solar/"
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
