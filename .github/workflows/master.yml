@@ -36,7 +36,7 @@ jobs:
         with:
           switches: -avzr --delete
           path: ./*
-          remote_path: /var/www/html/solar/ims
+          remote_path: /var/www/html/solar/
           remote_host: 18.142.37.231
           remote_user: ec2-user
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
