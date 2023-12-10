@@ -41,6 +41,11 @@ jobs:
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
+
+          # Clear old key from known_hosts
+          ssh-keygen -R 18.142.37.231
+
+          # Run the SSH command
           ssh -i private_key.pem ec2-user@18.142.37.231 \
           "sudo chown -R ec2-user:apache /var/www/html/solar/"
         env:
