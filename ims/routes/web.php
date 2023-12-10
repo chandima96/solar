@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\CategoryController;
 
 
 
@@ -52,6 +53,7 @@ Route::get('/supplier', [SupplierController::class, 'index']);
 Route::resource('suppliers', SupplierController::class);
 Route::resource('products', ProductController::class);
 Route::get('/inventory', [InventoryController::class, 'index']);
+Route::get('/category', [CategoryController::class, 'index']);
 Route::resource('inventorys', InventoryController::class);
 
 
