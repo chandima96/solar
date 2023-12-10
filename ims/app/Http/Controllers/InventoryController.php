@@ -14,12 +14,15 @@ class InventoryController extends Controller
     {
         // $inventories = Inventory::all();
         // return view('inventories.index', compact('inventories'));
+        $categoryController = new CategoryController(); 
+        $activeCategories= $categoryController->activeCategories();
+
         $inventories = DB::table('products')
         ->join('batch_has_products', 'products.id', '=', 'batch_has_products.product_id')
         ->select('products.*', 'batch_has_products.*')
         ->get();
-
-    return view('inventories.index', compact('inventories'));
+    //  dd($inventories);
+    return view('inventory', compact('inventories','activeCategories'));
     }
 
     public function create()

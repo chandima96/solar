@@ -10,8 +10,12 @@ class ProductController extends Controller
 {
     public function index()
     {
+        $categoryController = new CategoryController(); 
+        $activeCategories= $categoryController->activeCategories();
         $products = Product::all();
-        return view('products.index', compact('products'));
+        $products->load('category');
+        // dd($products);
+        return view('product', compact('products','activeCategories'));
     }
 
     public function create()
@@ -30,13 +34,15 @@ class ProductController extends Controller
 
     // Create a new product
     Product::create([
+        
         'name' => $request->input('name'),
         'description' => $request->input('description'),
-        'type' => $request->input('type'),
+        'category_id' => $request->input('type'),
         // Add more fields based on your product table structure
+
     ]);
         // Optionally, you can redirect the user with a success message
-        return redirect('/inventory')->with('success', 'Product created successfully.');
+        return redirect('products')->with('success', 'Product created successfully.');
     }
 
     public function edit(Product $product)

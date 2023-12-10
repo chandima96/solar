@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained();
             $table->foreignId('batch_id')->constrained();
+            $table->foreignId('category_id')->constrained();
             $table->decimal('quantity');
             $table->decimal('available_quantity');
             $table->decimal('price');
-            $table->string('type');
             $table->string('damaged_quantity');
             $table->string('brand');
             $table->string('supplier_id');

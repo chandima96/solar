@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('batchs', function (Blueprint $table) {
+        Schema::create('batches', function (Blueprint $table) {
             $table->id();
             $table->string('batch_no');
             $table->timestamps();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('batch');
+        Schema::dropIfExists('batches');
     }
 };

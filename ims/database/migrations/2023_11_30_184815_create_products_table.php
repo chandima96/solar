@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('type');
+            $table->integer('category_id');
+            // $table->foreignId('category_id')->constrained();
             
 
             $table->timestamps();
