@@ -51,6 +51,6 @@ jobs:
 
           # Run the SSH command
           ssh -i private_key.pem -o StrictHostKeyChecking=no ec2-user@18.142.37.231 \
-          "sudo chown -R ec2-user:apache /var/www/html/solar/"
+          "sudo chown -R ec2-user:apache /var/www/html/solar/ && chmod 777 -R /var/www/html/solar/ims/storage"
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
