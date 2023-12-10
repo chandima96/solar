@@ -42,6 +42,9 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
 
+          # Create known_hosts file if it doesn't exist
+          touch /home/runner/.ssh/known_hosts
+          
           # Clear old key from known_hosts
           ssh-keygen -R 18.142.37.231
 
