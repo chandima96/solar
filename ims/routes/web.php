@@ -53,7 +53,7 @@ Route::get('/supplier', [SupplierController::class, 'index']);
 Route::resource('suppliers', SupplierController::class);
 Route::resource('products', ProductController::class);
 Route::get('/inventory', [InventoryController::class, 'index']);
-Route::get('/category', [CategoryController::class, 'index']);
+Route::resource('categories', CategoryController::class);
 Route::resource('inventorys', InventoryController::class);
 
 

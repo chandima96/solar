@@ -15,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('category');
+        $categories = Category::all();
+        // dd($categories);
+        return view('category', compact('categories'));
     }
 
     /**
