@@ -39,7 +39,9 @@ jobs:
 
       - name: 📂 Set ownership on remote server
         run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@18.142.37.231 \
-            "sudo chown -R ec2-user:apache /var/www/html/solar/"
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
+          chmod 600 private_key.pem
+          ssh -i private_key.pem ec2-user@18.142.37.231 \
+          "sudo chown -R ec2-user:apache /var/www/html/solar/"
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
