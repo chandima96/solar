@@ -51,11 +51,16 @@ jobs:
 
           # Run the SSH command
           ssh -i private_key.pem -o StrictHostKeyChecking=no ec2-user@18.142.37.231 \
-          "sudo chown -R ec2-user:apache /var/www/html/solar/ && chmod 777 -R /var/www/html/solar/ims/storage && chmod -R 777 /var/www/html/solar/ims/bootstrap/cache/ && cd /var/www/html/solar/ims/ && sudo npm install -g vite  && npm install && sudo chown -R ec2-user:apache /var/www/html/solar/"
-
-          ssh -i private_key.pem -o StrictHostKeyChecking=no ec2-user@18.142.37.231 \
-          "cd /var/www/html/solar/ && nohup npm run dev > /dev/null 2>&1 &"
-
-          
+          "sudo chown -R ec2-user:apache /var/www/html/solar/ && chmod 777 -R /var/www/html/solar/ims/storage && chmod -R 777 /var/www/html/solar/ims/bootstrap/cache/ && cd /var/www/html/solar/ims/ && sudo npm install -g vite  && npm install && sudo chown -R ec2-user:apache /var/www/html/solar/ && chmod +x /var/www/html/solar/ims/dev_run.sh"          
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: 🎉 Deploy to Remote Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: 18.142.37.231
+          username: ec2-user
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/html/solar/ims
+            ./dev_run.sh
