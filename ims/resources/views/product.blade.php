@@ -51,33 +51,6 @@
                           Description goes here.
                         </div>
                       </th>
-                      <!-- <th scope="col" class="relative group px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Average
-                        <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute bg-gray-100 border-2 text-gray-800 text-xs font-normal py-2 px-4 rounded-md mt-2 transition duration-300">
-                          Description Company here.
-                        </div>
-                      </th>
-                      <th scope="col" class="relative group px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Total <br>Value
-                        <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute bg-gray-100 border-2 text-gray-800 text-xs font-normal py-2 px-4 rounded-md mt-2 transition duration-300">
-                          Description Company here.
-                        </div>
-                      </th>
-                      <th scope="col" class="relative group px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Total <br>Issued
-                        <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute bg-gray-100 border-2 text-gray-800 text-xs font-normal py-2 px-4 rounded-md mt-2 transition duration-300">
-                          Description Company here.
-                        </div>
-                      </th>
-                      <th scope="col" class="relative group px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Damaged <br>Qnt
-                        <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute bg-gray-100 border-2 text-gray-800 text-xs font-normal py-2 px-4 rounded-md mt-2 transition duration-300">
-                          Description Company here.
-                        </div>
-                      </th>
-                      <th scope="col" class="relative px-3 py-3.5 text-left text-sm font-semibold text-gray-900 group">
-                        In stock
-                        <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute bg-gray-100 border-2 text-gray-800 text-xs font-normal py-2 px-4 rounded-md mt-2 transition duration-300">
-                          Description goes here.
-                        </div>
-                      </th> -->
-                      
                       <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
                         <span class="sr-only">Edit</span>
                       </th>
@@ -90,15 +63,11 @@
                       <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">{{$product->name}}</td>
                       <td class="px-3 py-4 text-sm text-gray-500">{{$product->description}}</td>
                       <td class="px-3 py-4 text-sm text-gray-500">{{$product->category->name}}</td>
-                      <!-- <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Metadelan</td> -->
-                      <!-- <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"></td> -->
                       <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                         <div class="flex items-center">
                         <button class="text-green-600 hover:text-green-700 mx-2" onclick="openEditModal({{$product->id}})">Add Batch</span></button>
-                           <!-- model Update -->
+                          
+                        <!-- model Update -->
             <div id="editModal{{$product->id}}" class="fixed inset-0 z-10 overflow-y-auto hidden">
               <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                 <div class="fixed inset-0 transition-opacity" aria-hidden="true">

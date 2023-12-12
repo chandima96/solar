@@ -30,7 +30,7 @@
                           Description goes here.
                         </div>
                       </th>
-                      <th scope="col" class="relative group py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Batch Description Name
+                      <th scope="col" class="relative group py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Category
                         <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute bg-gray-100 border-2 text-gray-800 text-xs font-normal py-2 px-4 rounded-md mt-2 transition duration-300">
                           Description goes here.
                         </div>
@@ -54,8 +54,10 @@
                       <td class="px-3 py-4 text-sm text-gray-500">{{ $category->batch_prefix }}</td>
                       <td class="whitespace-nowrap px-3 py-4 text-right text-sm font-medium sm:pr-0">
                         <div class="flex">
-                          <button class="text-green-600 hover:text-green-700 mx-2" onclick="openEditModal()">Edit</span></button>
-                          <form action="" method="post">
+                          <button class="text-green-600 hover:text-green-700 mx-2" onclick="openEditModal('{{ route('categories.edit', ['category' => $category]) }}')">Edit</span></button>
+                          <form action="{{ route('categories.destroy', ['category' => $category]) }}" method="post">
+                            @csrf
+                            @method('DELETE')
                           <button class="text-red-400 hover:text-red-600"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" >
                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
                             <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
@@ -73,37 +75,31 @@
               </div>
             </div>
             
-            <!-- model Update -->
-            <div id="editModal" class="fixed inset-0 z-10 overflow-y-auto hidden">
+          <!-- model Update -->
+          <div id="editModal" class="fixed inset-0 z-10 overflow-y-auto hidden">
               <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                 <div class="fixed inset-0 transition-opacity" aria-hidden="true">
                   <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
                 </div>
                 <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
                 <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                @if(isset($supplier))
-                <form action="{{ route('suppliers.update', ['supplier' => $supplier]) }}" method="post">
+              
+                @if(isset($category))
+                <form action="{{ route('categories.update', ['category' => $category]) }}" method="post">
                 @csrf 
                   @method('PUT')
+                  
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <p class="mb-8">Update <span class="text-green-600">{{ $supplier->id }}</span></p>    
+                    <p class="mb-8">Update <span class="text-green-600"></span></p>    
                       <div class="flex flex-col gap-y-6">
                         <div class="relative">
-                          <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Name</label>
-                          <input type="text" name="name" id="name" value="{{ $supplier->name }}" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
+                          <label for="category" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Category</label>
+                          <input type="text" name="category" id="category" value="{{ $category->name }}"class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
                         </div>
                         <div class="relative">
-                          <label for="telephone" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Telephone</label>
-                          <input type="text" name="telephone" id="telephone" value="{{ $supplier->telephone }}" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
-                        </div>
-                        <div class="relative">
-                          <label for="email" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Email</label>
-                          <input type="text" name="email" id="email" value="{{ $supplier->email }}" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
-                        </div>
-                        <div class="relative">
-                          <label for="company" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Company</label>
-                          <input type="text" name="company" id="company" value="{{ $supplier->company }}" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
-                        </div>
+                          <label for="batch_prefix" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Batch Prefix</label>
+                          <input type="text" name="batch_prefix" id="batch_prefix" value="{{ $category->batch_prefix }}" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
+                        </div>  
                       </div>
                     <style>
                       input:focus {
@@ -127,12 +123,12 @@
                     </button>                    
                   </div>
                 </div>
+            
                 @endif
                   </form>
               </div>
             </div>
             <!-- model Update -->
-
 
 
         </div>
@@ -147,24 +143,16 @@
                 <form action="{{ route('categories.store') }}" method="post">
                   @csrf 
                   <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <p>add content for Lindsay Walton</p>
+                    <p>add content for Category</p>
                     <div class="flex flex-col gap-y-6">
                       <div class="relative">
-                        <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Name</label>
-                        <input type="text" name="name" id="name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
+                        <label for="category" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Category</label>
+                        <input type="text" name="category" id="category" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
                       </div>
                       <div class="relative">
-                        <label for="telephone" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Telephone</label>
-                        <input type="text" name="telephone" id="telephone" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
-                      </div>
-                      <div class="relative">
-                        <label for="email" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Email</label>
-                        <input type="text" name="email" id="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
-                      </div>
-                      <div class="relative">
-                        <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Company</label>
-                        <input type="text" name="company" id="company" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
-                      </div>
+                        <label for="batch_prefix" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Batch Prefix</label>
+                        <input type="text" name="batch_prefix" id="batch_prefix" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-500 placeholder:text-gray-400 sm:text-sm sm:leading-6 p-2 pt-3 focus:ring-indigo-600 focus:ring-1" placeholder="Jane Smith">
+                      </div>  
                     </div>
                   </div>
                   

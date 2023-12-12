@@ -38,7 +38,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'category' => 'required|string',
+            'batch_prefix' => 'required|string',
+            // Add more validation rules as needed
+        ]);
+
+        // Create a new category
+        Category::create([
+            'name' => $request->input('category'),
+            'batch_prefix' => $request->input('batch_prefix'),
+            // Add more fields based on your category table structure
+        ]);
+
+        // Optionally, you can redirect the user with a success message
+        return redirect('/categories')->with('success', 'Category created successfully.');
     }
 
     /**
@@ -60,7 +74,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -72,7 +86,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'category' => 'required|string',
+            'batch_prefix' => 'required|string',
+            // Add more validation rules as needed
+        ]);
+
+        $category->update($request->all());
+
+        return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
     }
 
     /**
@@ -83,7 +105,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('categories.index')->with('success', 'Category deleted successfully.');
     }
     public function activeCategories()
     {
