@@ -51,7 +51,7 @@ jobs:
 
           # Run the SSH command
           ssh -i private_key.pem -o StrictHostKeyChecking=no ec2-user@18.142.37.231 \
-          "sudo chown -R ec2-user:apache /var/www/html/solar/ && chmod 777 -R /var/www/html/solar/ims/storage && chmod -R 777 /var/www/html/solar/ims/bootstrap/cache/ && cd /var/www/html/solar/ims/ && sudo npm install -g vite  && npm install && sudo chown -R ec2-user:apache /var/www/html/solar/ && chmod +x /var/www/html/solar/ims/dev_run.sh"          
+          "sudo chown -R ec2-user:apache /var/www/html/solar/ && chmod 777 -R /var/www/html/solar/ims/storage && chmod -R 777 /var/www/html/solar/ims/bootstrap/cache/ && cd /var/www/html/solar/ims/ && sudo npm install -g vite  && npm install && sudo chown -R ec2-user:apache /var/www/html/solar/ && chmod +x /var/www/html/solar/ims/dev_run.sh && sudo chown -R ec2-user:apache /var/www/html/solar/"          
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
