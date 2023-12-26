@@ -56,7 +56,7 @@
                             </div>
 
                             <div class="ml-12">
-                                <div class="text-red-600">Solar System - 2023</div>
+                                <div class="text-red-600">Solar System - 2024</div>
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
                                 </div>
