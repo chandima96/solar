@@ -24,3 +24,51 @@ Route::get('/inventroy', function () {
 Route::get('/inventroy-single', function () {
     return view('inventory.inventory-single');
 });
+
+Route::get('/brand', function () {
+    return view('brand.brand-home');
+});
+
+Route::get('/customer', function () {
+    return view('customer.customer-home');
+});
+
+Route::get('/customer-form', function () {
+    return view('customer.customer-form');
+});
+
+Route::get('/customer-info', function () {
+    return view('customer.customer-info');
+});
+
+Route::get('/customer-single', function () {
+    return view('customer.customer-single');
+});
+
+Route::get('/invoice', function () {
+    return view('invoice.invoice-home');
+});
+
+Route::get('/invoice-form', function () {
+    return view('invoice.invoice-form');
+});
+
+Route::get('/invoice-info', function () {
+    return view('invoice.invoice-info');
+});
+
+Route::get('/quotation', function () {
+    return view('quotation.quotation-home');
+});
+
+Route::get('/supplier', function () {
+    return view('supplier.supplier-home');
+});
+
+
+
+
+
+
+
+
