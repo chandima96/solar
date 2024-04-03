@@ -1,4 +1,6 @@
-
+/ims/public
+!/ims/public/.gitkeep
+/ims/.env
 
 .github/workflows/master.yml
 
