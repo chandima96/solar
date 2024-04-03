@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/inventroy', function () {
     return view('inventory.inventory-home');
 });
+
+Route::get('/inventroy-single', function () {
+    return view('inventory.inventory-single');
+});
