@@ -37,12 +37,12 @@
                         <input type="address" id="Address" class="font-inter font-normal text-sm pl-5 py-3 bg-transparent border-2 rounded-md border-[#BFC4D7] text-gray-900 block w-full h-[39px] placeholder-[#ABADB5] focus:outline-none" placeholder="Enter Address"/>
                     </div>
                 
-                    <div class="mt-6">
+                    <div class="">
                         <label for="email" class="block mb-3.5 text-sm font-medium text-[#32343A] font-inter">Email</label>
                         <input type="email" id="Email" class="font-inter font-normal text-sm pl-5 py-3 bg-transparent border-2 rounded-md border-[#BFC4D7] text-gray-900 block w-full h-[39px] placeholder-[#ABADB5] focus:outline-none" placeholder="Enter Email"/>
                     </div>
                 
-                    <div class="mt-6">
+                    <div class="">
                         <label for="contact-number" class="block mb-3.5 text-sm font-medium text-[#32343A] font-inter">Contact Number</label>
                         <input type="contact-number" id="Contact-Number" class="font-inter font-normal text-sm pl-5 py-3 bg-transparent border-2 rounded-md border-[#BFC4D7] text-gray-900 block w-full h-[39px] placeholder-[#ABADB5] focus:outline-none" placeholder="Enter Contact Number"/>
                     </div>

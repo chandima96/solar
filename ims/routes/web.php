@@ -61,9 +61,18 @@ Route::get('/quotation', function () {
     return view('quotation.quotation-home');
 });
 
+Route::get('/quotation-info', function () {
+    return view('quotation.quotation-info');
+});
+
+Route::get('/quotation-single', function () {
+    return view('quotation.quotation-info');
+});
+
 Route::get('/supplier', function () {
     return view('supplier.supplier-home');
 });
+
 
 
 
